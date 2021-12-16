@@ -9,22 +9,24 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 @Service
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class ProductServiceImpl implements ProductService{
 
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
     private ModelMapper modelMapper;
 
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
+
+//    public ModelMapper modelMapper() {
+//        return new ModelMapper();
+//    }
 
     public void setModelMapper(ModelMapper modelMapper){
         this.modelMapper = modelMapper;
